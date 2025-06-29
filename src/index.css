@@ -1,0 +1,93 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 210 24% 7%;
+    --foreground: 0 0% 100%;
+
+    --card: 210 24% 9%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 210 24% 9%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 217 91% 67%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 24% 15%;
+    --secondary-foreground: 0 0% 85%;
+
+    --muted: 210 24% 12%;
+    --muted-foreground: 210 10% 65%;
+
+    --accent: 210 24% 20%;
+    --accent-foreground: 0 0% 90%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 24% 20%;
+    --input: 210 24% 12%;
+    --ring: 217 91% 67%;
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 210 24% 9%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 217 91% 67%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 24% 12%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 210 24% 20%;
+    --sidebar-ring: 217 91% 67%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono;
+    background-image: radial-gradient(circle at 1px 1px, rgba(88, 166, 255, 0.1) 1px, transparent 0);
+    background-size: 20px 20px;
+  }
+
+  * {
+    @apply border-border;
+  }
+}
+
+@layer components {
+  .terminal-border {
+    border: 1px solid hsl(var(--border));
+  }
+  
+  .hex-title {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: hsl(var(--primary));
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent));
+}
